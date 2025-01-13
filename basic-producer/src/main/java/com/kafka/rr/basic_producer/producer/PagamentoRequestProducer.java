@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class PagamentoRequestProducer {
 
     @Value("${topicos.pagamento.request.topic}")
-    public String topicoPagamentoRequest;
+    private String topicoPagamentoRequest;  // Ajuste para a chave correta no application.yml
 
     private final ObjectMapper objectMapper;
     private final KafkaTemplate<String, String> kafkaTemplate;
@@ -27,6 +27,6 @@ public class PagamentoRequestProducer {
     public void sendMessage(Pagamento pagamento) throws JsonProcessingException {
         String orderAsMessage = objectMapper.writeValueAsString(pagamento);
         kafkaTemplate.send(topicoPagamentoRequest, orderAsMessage);
-        logger.info("Mensagem enviada");
+        logger.info("Mensagem enviada para o tópico: {}", topicoPagamentoRequest);
     }
 }

@@ -1,6 +1,13 @@
 spring:
   application:
     name: basic-producer
+  kafka:
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: pagamento.request.topic.v1  # O nome do tópico pode ser configurado diretamente aqui
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 server:
   port: 9090
@@ -8,4 +15,4 @@ server:
 topicos:
   pagamento:
     request:
-      topic: "pagamento.request.topic.v1"
+      topic: "pagamento.request.topic.v1"  # Este valor agora é utilizado corretamente na classe `PagamentoRequestProducer`

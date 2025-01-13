@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: basic-consumer
+server:
+  port: 8080
+
+topicos:
+  pagamento:
+    request:
+      topic: "pagamento.request.topic.v1"
