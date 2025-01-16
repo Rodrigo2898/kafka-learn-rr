@@ -7,7 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="basic-producer" />
+        <module name="payment-service-consumer" />
+        <module name="stock-service-consumer" />
         <module name="basic-consumer" />
+        <module name="order_producer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +22,9 @@
       <module name="basic-consumer" options="-parameters" />
       <module name="basic-producer" options="-parameters" />
       <module name="demo" options="-parameters" />
+      <module name="order_producer" options="-parameters" />
+      <module name="payment-service-consumer" options="-parameters" />
+      <module name="stock-service-consumer" options="-parameters" />
     </option>
   </component>
 </project>
