@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="basic-producer" />
+        <module name="order_producer" />
         <module name="payment-service-consumer" />
         <module name="stock-service-consumer" />
         <module name="basic-consumer" />
-        <module name="order_producer" />
+        <module name="advanced-producer" />
+        <module name="avro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +21,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="advanced-producer" options="-parameters" />
+      <module name="avro" options="" />
       <module name="basic-consumer" options="-parameters" />
       <module name="basic-producer" options="-parameters" />
       <module name="demo" options="-parameters" />

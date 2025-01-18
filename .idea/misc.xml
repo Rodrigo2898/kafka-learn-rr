@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/order_producer/pom.xml" />
         <option value="$PROJECT_DIR$/payment-service-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/stock-service-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/advanced-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/avro/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

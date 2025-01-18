@@ -1,5 +1,4 @@
 services:
-
   zookeeper:
     container_name: zookeeper-svc
     image: confluentinc/cp-zookeeper:7.5.0
@@ -23,7 +22,19 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
       KAFKA_DELETE_TOPIC_ENABLE: "true"
-      KAFKA_ADVERTISED_HOST_NAME:
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:7.5.0
+    hostname: schema-registry
+    container_name: schema-registry
+    depends_on:
+      - kafka
+    ports:
+      - "8085:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafka:29092'
+      SCHEMA_REGISTRY_LISTENERS: http://schema-registry:8081
 
   kafdrop:
     image: obsidiandynamics/kafdrop

@@ -1,0 +1,33 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: advanced-producer
+
+  # Local Kafka Cluster
+  kafka:
+    bootstrap-servers: kafka:29092
+    properties:
+      security.protocol: PLAINTEXT
+
+      # Local Schema Registry
+      schema.registry.url: http://schema-registry:8081
+
+    # Kafka Producer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        enable.idempotence: true
+
+# Kafka topic
+kafka:
+  push:
+    topic: push.largest_picture.sol.avro
+
+logging:
+  level:
+    org:
+      springframework:
+        kafka: TRACE
