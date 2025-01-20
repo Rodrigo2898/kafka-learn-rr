@@ -42,12 +42,11 @@ public class ClusterConfig {
     }
 
     private Properties getProperties() {
-        Properties props = new Properties();
         Properties properties = new Properties();
         properties.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, env.getProperty("spring.kafka.bootstrap-servers"));
         properties.put(AdminClientConfig.SECURITY_PROTOCOL_CONFIG, env.getProperty("spring.kafka.properties.security.protocol"));
-        properties.put("sasl.mechanism", env.getProperty("spring.kafka.properties.sasl.mechanism"));
-        properties.put("sasl.jaas.config", env.getProperty("spring.kafka.properties.sasl.jaas.config"));
+//        properties.put("sasl.mechanism", env.getProperty("spring.kafka.properties.sasl.mechanism"));
+//        properties.put("sasl.jaas.config", env.getProperty("spring.kafka.properties.sasl.jaas.config"));
         return properties;
     }
 }

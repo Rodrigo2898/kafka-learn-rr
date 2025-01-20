@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="basic-producer" />
         <module name="order_producer" />
+        <module name="advanced-streams-kafka" />
         <module name="payment-service-consumer" />
         <module name="stock-service-consumer" />
         <module name="basic-consumer" />
@@ -22,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="advanced-producer" options="-parameters" />
+      <module name="advanced-streams-kafka" options="-parameters" />
       <module name="avro" options="" />
       <module name="basic-consumer" options="-parameters" />
       <module name="basic-producer" options="-parameters" />
