@@ -7,12 +7,12 @@ spring:
 
   # Local Kafka Cluster
   kafka:
-    bootstrap-servers: kafka:29092
+    bootstrap-servers: localhost:9092
     properties:
       security.protocol: PLAINTEXT
 
       # Local Schema Registry
-      schema.registry.url: http://schema-registry:8081
+      schema.registry.url: http://127.0.0.1:8085
 
     # Kafka Producer
     producer:

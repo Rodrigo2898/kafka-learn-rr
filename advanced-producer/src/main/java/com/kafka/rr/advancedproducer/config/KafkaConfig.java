@@ -17,8 +17,8 @@ public class KafkaConfig {
         return TopicBuilder
                 .name(topic)
                 .partitions(3)
-                .replicas(3)
-                .config("min.insync.replicas", "2")
+                .replicas(1)
+                .config("min.insync.replicas", "1")
                 .build();
     }
 }
