@@ -1,0 +1,57 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: advanced-streams-kafka
+
+  # Local Kafka Cluster
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      security.protocol: PLAINTEXT
+
+    # Local Schema Registry
+    schema:
+      registry:
+        url: http://127.0.0.1:8085
+
+    # Kafka Producer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        enable.idempotence: true
+
+    # Kafka Streams
+    streams:
+      application-id: streams-application
+      replication-factor: 3
+      state-dir: C:C:\Users\rodri\Documents\IT\Courses\Kafka\demo-kafka-project\${random.value}
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+        num.standby.replicas: 1
+        processing.guarantee: exactly_once_v2
+
+# Kafka topics
+kafka:
+  push:
+    sol:
+      topic: push.largest_picture.sol.avro
+  process:
+    picture:
+      topic: streaming.largest_picture.picture.avro
+
+# NASA API Configuration
+nasa:
+  client:
+    key: ${NASA.KEY}
+    url: https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos
+
+# Logging Configuration
+logging:
+  level:
+    org:
+      springframework:
+        kafka: TRACE

@@ -8,12 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="basic-producer" />
         <module name="order_producer" />
+        <module name="avro-models" />
         <module name="advanced-streams-kafka" />
         <module name="payment-service-consumer" />
         <module name="stock-service-consumer" />
         <module name="basic-consumer" />
         <module name="advanced-producer" />
-        <module name="avro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,7 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="advanced-producer" options="-parameters" />
       <module name="advanced-streams-kafka" options="-parameters" />
-      <module name="avro" options="" />
+      <module name="avro-models" options="" />
       <module name="basic-consumer" options="-parameters" />
       <module name="basic-producer" options="-parameters" />
       <module name="demo" options="-parameters" />

@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/advanced-producer/pom.xml" />
         <option value="$PROJECT_DIR$/avro/pom.xml" />
         <option value="$PROJECT_DIR$/advanced-streams-kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/avro-models/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

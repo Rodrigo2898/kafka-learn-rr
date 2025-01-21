@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kafka.rr</groupId>
-    <artifactId>avro</artifactId>
+    <artifactId>avro-models</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>avro</name>
     <description>avro</description>
